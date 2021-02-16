@@ -1,0 +1,80 @@
+/* form */
+
+input[type="text"], input[type="number"] {
+  @apply appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+  @apply outline-none bg-white border-black;
+}
+
+select {
+  @apply block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight;
+}
+
+select:focus {
+  @apply outline-none bg-white border-white;
+}
+
+label {
+  @apply block uppercase tracking-wide text-xs font-bold mb-2 text-black;
+}
+
+button {
+  @apply bg-black text-white font-bold py-2 px-4 rounded inline-flex items-center;
+}
+
+button.error {
+  @apply bg-red-800 text-white;
+}
+
+button:hover, button:active, button:focus {
+  @apply bg-black outline-none;
+}
+
+button svg {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+
+.container {
+  @apply mx-auto max-w-4xl;
+}
+
+.page-header {
+  @apply flex items-center justify-between flex-wrap bg-green-400 p-6 text-black;
+}
+
+.page-header h1 {
+  @apply text-xl ml-5;
+}
+
+.page-header .logo {
+  width: 48px;
+}
+
+
+table {
+  @apply table-auto border-collapse w-full mt-5
+}
+
+table thead tr {
+  @apply rounded-lg text-sm font-medium text-gray-600 text-left
+}
+
+table thead th {
+  @apply px-4 py-2 bg-gray-200
+}
+
+table tbody {
+  @apply text-sm font-normal text-gray-700
+}
+
+table tbody tr {
+  @apply hover:bg-gray-100 border-b border-gray-200 py-10
+}
+
+table tbody td {
+  @apply px-4 py-4
+}
