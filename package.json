@@ -20,6 +20,7 @@
     "@vuedx/typescript-plugin-vue": "^0.6.0",
     "typescript": "^4.1.3",
     "vite": "^2.0.0-beta.70",
+    "vite-plugin-pwa": "^0.4.6",
     "vite-plugin-windicss": "^0.1.16"
   }
 }
