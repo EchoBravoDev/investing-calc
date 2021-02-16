@@ -1,4 +1,5 @@
 import { App } from 'vue'
+import Maska from 'maska'
 
 const formater = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
@@ -7,6 +8,7 @@ const formater = new Intl.NumberFormat('pt-BR', {
 })
 
 export const install = (app: App) => {
+  app.use(Maska)
 
   app.config.globalProperties.$filters = {
     money(value: number ) {

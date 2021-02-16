@@ -1,9 +1,9 @@
 <template>
   <PageHeader />
-  <div class="container">
+  <main class="container">
     <PageForm />
     <Results />
-  </div>
+  </main>
 </template>
 
 <script lang="ts">
