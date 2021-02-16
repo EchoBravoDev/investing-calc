@@ -58,6 +58,13 @@ main {
   width: 48px;
 }
 
+.page-footer {
+  @apply font-mono text-black text-center text-sm mt-5;
+}
+
+.page-footer a {
+  @apply text-green-700;
+}
 
 table {
   @apply table-auto border-collapse w-full mt-5
