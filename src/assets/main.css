@@ -47,7 +47,7 @@ button svg {
 }
 
 .page-header h1 {
-  @apply text-xl ml-5;
+  @apply text-xl;
 }
 
 .page-header .logo {

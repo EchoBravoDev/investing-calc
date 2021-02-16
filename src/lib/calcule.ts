@@ -41,9 +41,6 @@ const calcule = async (entry: Entry): Promise<Result[]> => {
       return acc
     }, initial)
 
-  console.log(values);
-
-
   return values.entries
 }
 

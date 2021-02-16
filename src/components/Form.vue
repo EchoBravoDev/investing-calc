@@ -12,7 +12,7 @@ export type FormData = {
 
 export default defineComponent({
   name: 'Form',
-  setup(_, { emit }) {
+  setup() {
     const { entry, setState } = useEntryData()
     const form: Entry = reactive({
       initialValue: 0,
@@ -61,7 +61,7 @@ export default defineComponent({
       <input
         v-model.number="form.monthlyTax"
         type="number"
-        name="monthly-value">
+        name="monthly-tax">
     </label>
   </div>
   <div class="grid grid-cols-1 gap-2">
@@ -70,7 +70,7 @@ export default defineComponent({
       <input
         v-model.number="form.period"
         type="number"
-        name="initial-value">
+        name="period">
     </label>
     <button @click="calcule">
       Calcular

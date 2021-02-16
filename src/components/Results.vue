@@ -2,41 +2,41 @@
 import { defineComponent, ref, watchEffect } from 'vue'
 import { useEntryData } from '../states/entry'
 import { calcule, Result } from '../lib/calcule'
+import ResultTable from './ResultTable.vue'
 
 export default defineComponent({
   name: 'Result',
+  components: {ResultTable},
   setup () {
     const values = ref<Result[]>([])
+    const loading = ref(false)
     const { entry } = useEntryData()
 
     watchEffect(async () => {
-      values.value = await calcule({...entry.value})
+      loading.value = true
+      try {
+        values.value = await calcule({...entry.value})
+      } catch (error) {
+        values.value = []
+      } finally {
+        loading.value = false
+      }
     })
 
     return {
       values,
-      entry
+      loading
     }
   }
 })
 </script>
 
 <template>
+  <div v-if="loading">
+    Carregando...
+  </div>
+  <div v-else>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Total</th>
-        <th>Rendimento</th>
-        <th>Total Investido</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="row in values" :key="row.index">
-        <td>{{ row.value }}</td>
-        <td>{{ row.tax }}</td>
-        <td>{{ row.accumulative }}</td>
-      </tr>
-    </tbody>
-  </table>
+    <ResultTable :values="values" />
+  </div>
 </template>
