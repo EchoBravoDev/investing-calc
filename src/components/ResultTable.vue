@@ -19,9 +19,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <table>
+  <table id="result-table">
     <thead>
       <tr>
+        <th>#</th>
         <th>Total</th>
         <th>Rendimento</th>
         <th>Total Investido</th>
@@ -29,6 +30,7 @@ export default defineComponent({
     </thead>
     <tbody>
       <tr v-for="row in values" :key="row.index">
+        <td>{{ row.index }}</td>
         <td>{{ $filters.money(row.value) }}</td>
         <td>{{ $filters.money(row.tax) }}</td>
         <td>{{ $filters.money(row.accumulative) }}</td>
@@ -36,3 +38,14 @@ export default defineComponent({
     </tbody>
   </table>
 </template>
+
+<style>
+#result-table thead tr th:first-child {
+  width: 10px;
+  text-align: center;
+}
+
+#result-table thead tr th:first-child, #result-table tbody tr td:first-child {
+  @apply text-gray-400;
+}
+</style>

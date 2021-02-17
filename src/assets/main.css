@@ -39,7 +39,7 @@ button svg {
 
 
 main {
-  @apply px-4
+  @apply px-4;
 }
 
 .container {
@@ -67,25 +67,33 @@ main {
 }
 
 table {
-  @apply table-auto border-collapse w-full mt-5
+  @apply table-auto border-collapse w-full mt-5;
 }
 
 table thead tr {
-  @apply rounded-lg text-sm font-medium text-gray-600 text-left
+  @apply rounded-lg text-sm font-medium text-gray-600 text-left;
 }
 
 table thead th {
-  @apply px-4 py-2 bg-gray-200
+  @apply p-2 bg-gray-200;
 }
 
 table tbody {
-  @apply text-sm font-normal text-gray-700
+  @apply text-sm font-normal text-gray-700;
 }
 
 table tbody tr {
-  @apply hover:bg-gray-100 border-b border-gray-200 py-10
+  @apply hover:bg-gray-100 border-b border-gray-200 py-10;
 }
 
 table tbody td {
-  @apply px-4 py-4
+  @apply p-2;
+}
+
+@media (max-width: 640px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }

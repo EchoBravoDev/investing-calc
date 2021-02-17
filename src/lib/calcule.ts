@@ -6,7 +6,7 @@ export type Entry = {
 }
 
 export type Result = {
-  index: number
+  index: string
   value: number
   tax: number
   accumulative: number
@@ -19,6 +19,7 @@ type CalculeAcc = {
 
 const calcule = async (entry: Entry): Promise<Result[]> => {
   const monthlyTax = entry.monthlyTax / 100
+  const padding = String(entry.period).length
   const initial: CalculeAcc = {
     current: entry.initialValue,
     entries: []
@@ -29,7 +30,7 @@ const calcule = async (entry: Entry): Promise<Result[]> => {
       const tax = (acc.current + entry.monthlyValue) * monthlyTax
 
       const current: Result = {
-        index,
+        index: String(index + 1).padStart(padding, '0'),
         tax,
         accumulative: ((index + 1) * entry.monthlyValue) + entry.initialValue,
         value: (acc.current + entry.monthlyValue) + tax
