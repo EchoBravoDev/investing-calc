@@ -3,10 +3,11 @@ import { defineComponent, ref, watchEffect } from 'vue'
 import { useEntryData } from '../states/entry'
 import { calcule, Result } from '../lib/calcule'
 import ResultTable from './ResultTable.vue'
+import ResultResume from './ResultResume.vue'
 
 export default defineComponent({
   name: 'Result',
-  components: {ResultTable},
+  components: {ResultTable, ResultResume},
   setup () {
     const values = ref<Result[]>([])
     const loading = ref(false)
@@ -36,7 +37,7 @@ export default defineComponent({
     Carregando...
   </div>
   <div v-else>
-
+    <ResultResume :values="values" />
     <ResultTable :values="values" />
   </div>
 </template>
