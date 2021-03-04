@@ -66,6 +66,10 @@ main {
   @apply text-green-700;
 }
 
+.icon-tabler {
+  display: inline-block;
+}
+
 table {
   @apply table-auto border-collapse w-full mt-5;
 }

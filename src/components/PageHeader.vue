@@ -1,8 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import IconCalc from './icons/Calc.vue'
 
 export default defineComponent({
-  name: 'PageHeader'
+  name: 'PageHeader',
+  components: {
+    IconCalc
+  }
 })
 </script>
 
@@ -10,7 +14,9 @@ export default defineComponent({
   <header class="page-header">
     <div class="container">
       <div class="flex items-center justify-center">
-        <h1>EchoBravo Investing</h1>
+        <h1>
+          <IconCalc /> EchoBravo Investing
+        </h1>
       </div>
     </div>
   </header>
