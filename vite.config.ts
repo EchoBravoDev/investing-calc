@@ -34,6 +34,7 @@ export default defineConfig({
     ...WindiCSS(),
     VitePWA({
       minify: false,
+      injectRegister: false,
       manifest: {
         name: 'EchoBravo - Investing Calc',
         short_name: 'Investing Calc',
