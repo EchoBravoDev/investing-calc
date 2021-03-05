@@ -49,8 +49,7 @@ export default defineConfig({
         skipWaiting: true,
         clientsClaim: true,
         cleanupOutdatedCaches: true,
-        sourcemap: false,
-        exclude: /(_redirects|_headers|logo.png|robots.txt)/,
+        sourcemap: false
       }
     }),
   ]
