@@ -46,6 +46,7 @@ export default defineConfig({
       },
       workbox: {
         cacheId: `bravo:${pkg.version}`,
+        skipWaiting: true,
         clientsClaim: true,
         cleanupOutdatedCaches: true,
         sourcemap: false
