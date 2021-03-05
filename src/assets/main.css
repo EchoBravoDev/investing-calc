@@ -38,6 +38,10 @@ button svg {
 }
 
 
+button.is-alert {
+  @apply bg-yellow-500 text-white;
+}
+
 main {
   @apply px-4;
 }
@@ -48,6 +52,9 @@ main {
 
 .page-header {
   @apply flex items-center justify-between flex-wrap bg-green-400 p-6 text-black;
+}
+.page-header.is-offline {
+  @apply bg-orange-400 text-white;
 }
 
 .page-header h1 {
